@@ -502,7 +502,7 @@ body {
   <div class="section-body">
     <div class="oneliner">
       <div class="oneliner-label">ひとことで言うと</div>
-      プロラインのLPを見て、リッチメニューからポチるだけ！
+      LINEの案内を見て、申込ボタンをタップするだけ！
     </div>
     <div class="step-flow">
 
@@ -512,8 +512,8 @@ body {
           <div class="step-line"></div>
         </div>
         <div class="step-content">
-          <div class="step-label">プロラインのLPを見て、リッチメニューから申込をタップ</div>
-          <div class="step-sub">TrailBlazerの試用版を利用中に、LINEのリッチメニューにある「申込ボタン」をタップしてください。</div>
+          <div class="step-label">LINEで届いた案内から「申込」ボタンをタップ</div>
+          <div class="step-sub">TrailBlazerのLINEアカウントから届いた案内をご確認ください。画面下部のボタンメニューから「申込」をタップしてください。</div>
         </div>
       </div>
 
@@ -680,9 +680,9 @@ body {
           <tr style="background:var(--surface-2);"><td style="padding:9px 14px;border-bottom:1px solid var(--border);font-weight:700;">乙</td><td style="padding:9px 14px;border-bottom:1px solid var(--border);">サービスを利用するあなた</td></tr>
           <tr><td style="padding:9px 14px;border-bottom:1px solid var(--border);font-weight:700;">BASIC会員</td><td style="padding:9px 14px;border-bottom:1px solid var(--border);">使用料のみ支払う会員。サポートは都度払い</td></tr>
           <tr style="background:var(--surface-2);"><td style="padding:9px 14px;border-bottom:1px solid var(--border);font-weight:700;">PREMIUM会員</td><td style="padding:9px 14px;border-bottom:1px solid var(--border);">使用料＋サポート料を支払い、年間300分のサポートチケットが付く会員</td></tr>
-          <tr><td style="padding:9px 14px;border-bottom:1px solid var(--border);font-weight:700;">RST</td><td style="padding:9px 14px;border-bottom:1px solid var(--border);">あなたのサービス利用状態（Registration Status）</td></tr>
+          <tr><td style="padding:9px 14px;border-bottom:1px solid var(--border);font-weight:700;">RST</td><td style="padding:9px 14px;border-bottom:1px solid var(--border);">あなたのアカウントの状態（使用中・停止中など）を事務局が管理するための情報</td></tr>
           <tr style="background:var(--surface-2);"><td style="padding:9px 14px;border-bottom:1px solid var(--border);font-weight:700;">PTF</td><td style="padding:9px 14px;border-bottom:1px solid var(--border);">プログラム修正・機能更新の適用（アップデートのこと）</td></tr>
-          <tr><td style="padding:9px 14px;font-weight:700;">Circle</td><td style="padding:9px 14px;">PREMIUM会員で構成されるコミュニティグループ</td></tr>
+          <tr><td style="padding:9px 14px;font-weight:700;">Circle</td><td style="padding:9px 14px;">PREMIUM会員で構成されるコミュニティグループ。システムの使い方や開発状況の共有、有料コンテンツの紹介などを行います</td></tr>
         </tbody>
       </table>
     </div>
@@ -826,7 +826,7 @@ body {
         <div class="tl-left"><div class="tl-dot orange"></div><div class="tl-vline"></div></div>
         <div class="tl-content">
           <div class="tl-day">支払期日から30日超過</div>
-          <div class="tl-text">催告なく<strong>サービス停止</strong>になります</div>
+          <div class="tl-text">連絡なしに<strong>サービス停止</strong>になります</div>
         </div>
       </div>
       <div class="tl-item">
@@ -925,7 +925,8 @@ body {
           <span class="prohibit-example">❌ 具体例</span>
           TrailBlazerのExcelファイルをコピーして仲間の業者さんに配る<br>
           <span class="prohibit-example">❌ 具体例</span>
-          プログラムを解析して自分用に改造する
+          プログラムを解析して自分用に改造する<br>
+          <span style="font-size:12px;color:var(--accent-green);font-weight:700;">💡 ちなみに…これができる方は開発チームにスカウトするかもしれません</span>
         </div>
       </div>
 
@@ -944,27 +945,43 @@ body {
   <div class="section-body">
     <div class="oneliner">
       <div class="oneliner-label">ひとことで言うと</div>
-      違反があれば予告なし停止。でも改善すれば再開できます
+      停止には2種類あります。通知なし即時停止と、通知ありの停止です
     </div>
-    <div class="detail">以下のどれかに当てはまると、事前通知なしにサービスが停止されることがあります。</div>
 
+    <!-- 即時停止ブロック -->
+    <div class="detail" style="margin-top:20px;">
+      <strong style="color:var(--accent-red);">🔴 即時停止（通知なし・再開なし）</strong><br>
+      <span style="font-size:13px;">以下に該当する場合、連絡なしに即時サービスを停止します。</span>
+    </div>
     <div class="flowbox-wrap">
       <div class="flow-branch">
         <div class="flow-branch-item">
-          <div class="branch-label">トリガー①</div>
+          <div class="branch-label">①</div>
           <div class="flowbox red">第6条の禁止事項に違反</div>
         </div>
         <div class="flow-branch-item">
-          <div class="branch-label">トリガー②</div>
-          <div class="flowbox red">料金を30日超滞納</div>
-        </div>
-        <div class="flow-branch-item">
-          <div class="branch-label">トリガー③</div>
+          <div class="branch-label">③</div>
           <div class="flowbox red">カスタマーハラスメント<br><span style="font-size:11px;font-weight:400;">暴言・過度な要求・長時間拘束など</span></div>
         </div>
+      </div>
+      <div class="flow-arrow">↓</div>
+      <div class="flowbox red">連絡なしに即時停止・再開しません</div>
+    </div>
+
+    <!-- 通知停止ブロック -->
+    <div class="detail" style="margin-top:28px;">
+      <strong style="color:var(--accent-orange);">🟠 通知停止（メールあり・改善で再開可）</strong><br>
+      <span style="font-size:13px;">以下に該当する場合、メールで理由をお知らせしたうえで停止します。改善すれば再開できます。</span>
+    </div>
+    <div class="flowbox-wrap">
+      <div class="flow-branch">
         <div class="flow-branch-item">
-          <div class="branch-label">トリガー④</div>
-          <div class="flowbox red">運営上の必要性</div>
+          <div class="branch-label">②</div>
+          <div class="flowbox gold">料金を30日超滞納</div>
+        </div>
+        <div class="flow-branch-item">
+          <div class="branch-label">④</div>
+          <div class="flowbox gold">運営上の必要性</div>
         </div>
       </div>
       <div class="flow-arrow">↓</div>
@@ -1010,33 +1027,72 @@ body {
       <div class="flowbox green">契約期間満了で解約完了 ✓</div>
     </div>
 
-    <div class="detail" style="margin-top:20px;"><strong>事務局から解約されるケース</strong></div>
+    <!-- 無催告解除ブロック -->
+    <div class="detail" style="margin-top:20px;">
+      <strong style="color:var(--accent-red);">🔴 無催告解除（即時・再開なし）</strong><br>
+      <span style="font-size:13px;">以下に該当する場合、通知・猶予なく即時に契約解除されます。</span>
+    </div>
     <div class="flowbox-wrap">
       <div class="flow-branch">
         <div class="flow-branch-item">
           <div class="branch-label">ケース①</div>
-          <div class="flowbox red">停止後30日<br>改善なし</div>
+          <div class="flowbox red">禁止事項違反<br><span style="font-size:11px;">（第6条各号）</span></div>
         </div>
         <div class="flow-branch-item">
           <div class="branch-label">ケース②</div>
-          <div class="flowbox red">反社会的勢力<br>に該当と判明</div>
+          <div class="flowbox red">カスタマー<br>ハラスメント</div>
         </div>
         <div class="flow-branch-item">
           <div class="branch-label">ケース③</div>
-          <div class="flowbox red">破産・倒産<br>手続き申立て</div>
+          <div class="flowbox red">反社会的勢力<br>に該当と判明</div>
         </div>
         <div class="flow-branch-item">
           <div class="branch-label">ケース④</div>
-          <div class="flowbox red">90日以上<br>無応答→最終通知→30日無応答</div>
+          <div class="flowbox red">破産・倒産<br>手続き申立て</div>
+        </div>
+        <div class="flow-branch-item">
+          <div class="branch-label">ケース⑤</div>
+          <div class="flowbox red">連絡不能<br><span style="font-size:11px;">90日無応答→最終通知→30日</span></div>
         </div>
       </div>
       <div class="flow-arrow">↓</div>
-      <div class="flowbox red">催告なく契約解除</div>
+      <div class="flowbox red">催告なく即時契約解除・サービス再開なし</div>
+    </div>
+
+    <!-- 催告解除ブロック -->
+    <div class="detail" style="margin-top:28px;">
+      <strong style="color:var(--accent-orange);">🟠 催告解除（通知あり・改善機会あり）</strong><br>
+      <span style="font-size:13px;">以下に該当する場合、メールで通知のうえサービスを停止します。改善が見られれば再開できます。</span>
+    </div>
+    <div class="flowbox-wrap">
+      <div class="flow-branch">
+        <div class="flow-branch-item">
+          <div class="branch-label">ケース①</div>
+          <div class="flowbox gold">支払遅延<br><span style="font-size:11px;">（支払期日から30日超）</span></div>
+        </div>
+        <div class="flow-branch-item">
+          <div class="branch-label">ケース②</div>
+          <div class="flowbox gold">運営上の<br>停止判断</div>
+        </div>
+      </div>
+      <div class="flow-arrow">↓</div>
+      <div class="flowbox gold">メールで停止理由を通知</div>
+      <div class="flow-arrow">↓</div>
+      <div class="flow-branch">
+        <div class="flow-branch-item">
+          <div class="branch-label">30日以内に改善</div>
+          <div class="flowbox green">サービス再開 ✓</div>
+        </div>
+        <div class="flow-branch-item">
+          <div class="branch-label">改善なし（30日）</div>
+          <div class="flowbox red">契約解除へ →</div>
+        </div>
+      </div>
     </div>
 
     <div class="caution">
       <div class="caution-label">⚠️ 気をつけてほしいこと</div>
-      どちらの場合も、<strong>すでにお支払いいただいた料金の返金はありません</strong>。
+      どちらの場合も、<strong>すでにお支払いいただいた料金の返金はありません</strong>。カスタマーハラスメントの記録は保存され、再発時の解約事由として使用されることがあります。
     </div>
   </div>
 </section>
@@ -1063,7 +1119,7 @@ body {
             <li>TrailBlazerのプログラム</li>
             <li>マニュアル・文書一式</li>
             <li>Circleで提供する契約書ひな形・テンプレート</li>
-            <li>リッチメニュー画像 など</li>
+            <li>LINEのボタンメニュー画像 など</li>
           </ul>
         </div>
       </div>
@@ -1108,7 +1164,7 @@ body {
         <div class="prohibit-head" style="background:var(--surface-2);">② 外部サービスの仕様変更・障害・サービス終了<br><span style="font-size:11px;font-weight:400;">（Microsoft・Google・LINE など）</span></div>
       </div>
       <div class="prohibit-item">
-        <div class="prohibit-head" style="background:var(--surface-2);">③ あなたの操作ミス・設定誤り・PTF未適用</div>
+        <div class="prohibit-head" style="background:var(--surface-2);">③ あなたの操作ミス・設定誤り・アップデート未適用</div>
       </div>
       <div class="prohibit-item">
         <div class="prohibit-head" style="background:var(--surface-2);">④ あなたのPCやネットワーク環境に起因する問題</div>
@@ -1117,7 +1173,7 @@ body {
         <div class="prohibit-head" style="background:var(--surface-2);">⑤ 第三者による不正アクセス・ウイルス感染など</div>
       </div>
       <div class="prohibit-item">
-        <div class="prohibit-head" style="background:var(--surface-2);">⑥ エクスポートデータを加工・利用して生じた損害</div>
+        <div class="prohibit-head" style="background:var(--surface-2);">⑥ TrailBlazerから取り出したデータの加工・再利用はOKです。ただし、それによって発生したトラブルは事務局では責任を負いかねます</div>
       </div>
     </div>
     <div class="caution">
@@ -1140,7 +1196,7 @@ body {
       <div class="oneliner-label">ひとことで言うと</div>
       個人情報の扱いは、プライバシーポリシーに全部書いてあります
     </div>
-    <div class="detail">申込時にご登録いただく情報（氏名・屋号・住所・電話番号・メールアドレスなど）および利用状況（RST・認証ログ・PTF適用履歴など）は、プライバシーポリシーに従って適切に管理します。</div>
+    <div class="detail">申込時にご登録いただく情報（氏名・屋号・住所・電話番号・メールアドレスなど）および利用状況（アカウントの状態・ログイン履歴・アップデート適用履歴など）は、プライバシーポリシーに従って適切に管理します。</div>
 
     <div class="pp-flow">
       <div class="pp-box blue">📋 申込時に<br>プライバシーポリシーを確認・同意</div>
