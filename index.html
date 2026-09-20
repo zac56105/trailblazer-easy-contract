@@ -472,6 +472,7 @@ body {
 <nav class="toc" aria-label="目次">
   <div class="toc-inner">
     <a href="#flow">申込の流れ</a>
+    <a href="#s0">自動更新</a>
     <a href="#s1">定義</a>
     <a href="#s2">会員種別</a>
     <a href="#s3">料金</a>
@@ -512,7 +513,7 @@ body {
         </div>
         <div class="step-content">
           <div class="step-label">プロラインのLPを見て、リッチメニューから申込をタップ</div>
-          <div class="step-sub">TrailBlazerの試用版を利用中に、LINEのリッチメニューにある「申込ボタン」をタップしてください。<br>その後、事務局からメールが届きます。</div>
+          <div class="step-sub">TrailBlazerの試用版を利用中に、LINEのリッチメニューにある「申込ボタン」をタップしてください。</div>
         </div>
       </div>
 
@@ -522,8 +523,8 @@ body {
           <div class="step-line"></div>
         </div>
         <div class="step-content">
-          <div class="step-label">Googleアカウントを準備する</div>
-          <div class="step-sub">個人用のGoogleアカウントが必要です。会社や事務所などで共有しているアカウントはご利用いただけません。</div>
+          <div class="step-label">申込フォーム（Google Forms）に必要事項を入力</div>
+          <div class="step-sub">氏名・屋号・住所・電話番号・メールアドレス・会員種別（BASIC / PREMIUM）・JACA会員番号（お持ちの方）をご記入ください。</div>
         </div>
       </div>
 
@@ -533,8 +534,8 @@ body {
           <div class="step-line"></div>
         </div>
         <div class="step-content">
-          <div class="step-label">メール内のリンクから電子契約サービスにアクセスし、規約を確認</div>
-          <div class="step-sub">届いたメールのリンクを開いてください。本規約とプライバシーポリシーをご確認いただきます。</div>
+          <div class="step-label">事務局からメールが届く</div>
+          <div class="step-sub">申込内容を確認後、事務局より「契約書リンク」および「TrailBlazerダウンロードURL」をメールでお送りします。</div>
         </div>
       </div>
 
@@ -544,8 +545,8 @@ body {
           <div class="step-line"></div>
         </div>
         <div class="step-content">
-          <div class="step-label">申込フォームに必要事項を入力</div>
-          <div class="step-sub">氏名・屋号・住所・電話番号・メールアドレスをご記入ください。</div>
+          <div class="step-label">freeeサインで契約書にサイン</div>
+          <div class="step-sub">メール内の契約書リンクを開き、利用規約・プライバシーポリシーをご確認のうえ電子署名してください。</div>
         </div>
       </div>
 
@@ -555,11 +556,100 @@ body {
           <div class="step-line"></div>
         </div>
         <div class="step-content">
-          <div class="step-label">事務局が承諾 → 電子契約締結 → サービス開始！</div>
-          <div class="step-sub">事務局が申込内容を確認し、承諾通知をお送りします。電子契約が締結された時点でサービス開始となります。</div>
+          <div class="step-label">事務局から請求書が届く → お支払い</div>
+          <div class="step-sub">サイン確認後、事務局よりStripe決済リンクをお送りします。リンクからお支払いください。</div>
         </div>
       </div>
 
+      <div class="step-item">
+        <div class="step-left">
+          <div class="step-badge">5</div>
+          <div class="step-line"></div>
+        </div>
+        <div class="step-content">
+          <div class="step-label">入金確認 → 台帳登録 → サービス開始！</div>
+          <div class="step-sub">事務局が入金を確認し、台帳への登録が完了した時点でサービス開始となります。別途ご連絡いたします。</div>
+        </div>
+      </div>
+
+    </div>
+    <div class="caution">
+      <div class="caution-label">⚠️ 入金期限について</div>
+      請求書受領後<strong>30日以内</strong>にお支払いください。期日までに入金が確認できない場合、申込は無効となります。再度ご利用を希望される場合は、改めて申込をお願いいたします。<br>
+      なお、<strong>契約期間は署名日から起算</strong>します。入金が遅れた分だけサービス開始が後ろ倒しになりますのでご注意ください。
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════ -->
+<!-- 第2条 契約成立・自動更新 -->
+<!-- ══════════════════════════════════════ -->
+<section id="s0" class="section-card">
+  <div class="section-head">
+    <span class="section-num">第2条</span>
+    <span class="section-title">利用申込・契約成立・自動更新</span>
+  </div>
+  <div class="section-body">
+    <div class="oneliner">
+      <div class="oneliner-label">ひとことで言うと</div>
+      申し出がなければ、毎年自動で1年更新されます
+    </div>
+    <div class="detail">契約期間は<strong>1年間</strong>。期間満了の30日前までに解約の申し出がない場合、同じ条件で自動的に1年延長されます。</div>
+
+    <div class="detail"><strong>更新サイクルのフロー</strong></div>
+    <div class="flowbox-wrap">
+      <div class="flowbox neutral">契約開始（電子契約締結日）</div>
+      <div class="flow-arrow">↓</div>
+      <div class="flowbox gold">📧 満了60日前<br>事務局から更新案内メールが届く</div>
+      <div class="flow-arrow">↓</div>
+      <div class="flow-branch">
+        <div class="flow-branch-item">
+          <div class="branch-label">解約したい場合</div>
+          <div class="flowbox red">満了30日前までに<br>解約申し出（第8条）</div>
+        </div>
+        <div class="flow-branch-item">
+          <div class="branch-label">継続する場合</div>
+          <div class="flowbox neutral">申し出なし<br>↓</div>
+        </div>
+      </div>
+      <div class="flow-arrow">↓</div>
+      <div class="flow-branch">
+        <div class="flow-branch-item">
+          <div class="branch-label">解約の場合</div>
+          <div class="flowbox red">契約期間満了で終了</div>
+        </div>
+        <div class="flow-branch-item">
+          <div class="branch-label">継続の場合</div>
+          <div class="flowbox green">自動で1年更新 ✓<br>以後くり返し</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="caution">
+      <div class="caution-label">⚠️ 気をつけてほしいこと</div>
+      解約申し出の期限は<strong>満了30日前まで</strong>です。それを過ぎると自動更新されます。更新案内メールは必ずチェックしてください。
+    </div>
+
+    <div class="detail" style="margin-top:20px;"><strong>サービス開始・更新のフロー</strong></div>
+    <div class="flowbox-wrap">
+      <div class="flow-branch">
+        <div class="flow-branch-item">
+          <div class="branch-label">新規契約時</div>
+          <div class="flowbox neutral">お申込み・お支払い</div>
+          <div class="flow-arrow">↓</div>
+          <div class="flowbox neutral">事務局が入金確認</div>
+          <div class="flow-arrow">↓</div>
+          <div class="flowbox green">台帳登録 → サービス開始 ✓</div>
+        </div>
+        <div class="flow-branch-item">
+          <div class="branch-label">更新時</div>
+          <div class="flowbox gold">📧 事務局から請求書が届く</div>
+          <div class="flow-arrow">↓</div>
+          <div class="flowbox neutral">指定期日までに入金</div>
+          <div class="flow-arrow">↓</div>
+          <div class="flowbox green">入金確認 → 更新完了 ✓</div>
+        </div>
+      </div>
     </div>
   </div>
 </section>
