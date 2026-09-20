@@ -1,0 +1,1169 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>よくわかる契約書｜TrailBlazer</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&family=Noto+Serif+JP:wght@400;700&display=swap" rel="stylesheet">
+<style>
+:root {
+  --ink: #1a1a2e;
+  --ink-soft: #3d3d5c;
+  --ink-mute: #7a7a99;
+  --base: #f7f8fc;
+  --surface: #ffffff;
+  --surface-2: #f0f2fa;
+  --trail-blue: #2d5be3;
+  --trail-blue-light: #e8eeff;
+  --trail-navy: #1a2f6e;
+  --accent-gold: #e8a020;
+  --accent-gold-light: #fef6e4;
+  --accent-green: #1a8a5a;
+  --accent-green-light: #e4f5ee;
+  --accent-red: #d63030;
+  --accent-red-light: #fdeaea;
+  --accent-orange: #d96020;
+  --accent-orange-light: #fdf0e8;
+  --border: #dde2f0;
+  --radius: 10px;
+  --radius-lg: 16px;
+  box-sizing: border-box;
+  padding-top: env(safe-area-inset-top, 0px);
+  padding-bottom: env(safe-area-inset-bottom, 0px);
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --ink: #e8eaf6;
+    --ink-soft: #b0b4d8;
+    --ink-mute: #7a7e9e;
+    --base: #12132a;
+    --surface: #1e2040;
+    --surface-2: #252850;
+    --trail-blue-light: #1a2555;
+    --accent-gold-light: #2a2000;
+    --accent-green-light: #0a2018;
+    --accent-red-light: #2a0808;
+    --accent-orange-light: #2a1000;
+    --border: #2e3260;
+  }
+}
+*, *::before, *::after { box-sizing: inherit; margin: 0; padding: 0; }
+html { scroll-padding-top: env(safe-area-inset-top, 0px); }
+body {
+  font-family: 'Noto Sans JP', sans-serif;
+  background: var(--base);
+  color: var(--ink);
+  line-height: 1.8;
+  font-size: 15px;
+}
+
+/* ── HEADER ── */
+.site-header {
+  background: var(--trail-navy);
+  color: #fff;
+  padding: 32px 24px 28px;
+  text-align: center;
+}
+.site-header .logo-label {
+  font-size: 11px;
+  letter-spacing: 0.15em;
+  color: rgba(255,255,255,0.55);
+  margin-bottom: 8px;
+}
+.site-header h1 {
+  font-family: 'Noto Serif JP', serif;
+  font-size: clamp(22px, 5vw, 32px);
+  font-weight: 700;
+  line-height: 1.3;
+}
+.site-header .subtitle {
+  margin-top: 10px;
+  font-size: 13px;
+  color: rgba(255,255,255,0.65);
+}
+.header-badge {
+  display: inline-block;
+  margin-top: 14px;
+  background: var(--accent-gold);
+  color: #fff;
+  font-size: 11px;
+  font-weight: 700;
+  padding: 4px 14px;
+  border-radius: 20px;
+  letter-spacing: 0.05em;
+}
+
+/* ── NAV ── */
+.toc {
+  background: var(--surface);
+  border-bottom: 1px solid var(--border);
+  padding: 16px 20px;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+.toc-inner {
+  max-width: 860px;
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+.toc a {
+  font-size: 11px;
+  color: var(--trail-blue);
+  text-decoration: none;
+  background: var(--trail-blue-light);
+  padding: 4px 10px;
+  border-radius: 20px;
+  white-space: nowrap;
+}
+.toc a:hover { background: var(--trail-blue); color: #fff; }
+
+/* ── MAIN LAYOUT ── */
+.main { max-width: 860px; margin: 0 auto; padding: 32px 20px 80px; }
+
+/* ── SECTION CARD ── */
+.section-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  margin-bottom: 32px;
+  overflow: hidden;
+}
+.section-head {
+  background: var(--trail-navy);
+  color: #fff;
+  padding: 16px 24px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.section-num {
+  font-size: 11px;
+  background: rgba(255,255,255,0.18);
+  padding: 2px 8px;
+  border-radius: 4px;
+  letter-spacing: 0.08em;
+  flex-shrink: 0;
+}
+.section-title {
+  font-size: 16px;
+  font-weight: 700;
+}
+.section-body { padding: 24px; }
+
+/* ── ONE-LINER ── */
+.oneliner {
+  background: var(--trail-blue-light);
+  border-left: 4px solid var(--trail-blue);
+  border-radius: 0 var(--radius) var(--radius) 0;
+  padding: 14px 18px;
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--trail-navy);
+  margin-bottom: 20px;
+}
+.oneliner-label {
+  font-size: 10px;
+  font-weight: 700;
+  color: var(--trail-blue);
+  letter-spacing: 0.1em;
+  margin-bottom: 4px;
+}
+
+/* ── DETAIL BLOCK ── */
+.detail {
+  font-size: 14px;
+  color: var(--ink-soft);
+  margin-bottom: 20px;
+  line-height: 1.9;
+}
+
+/* ── CAUTION ── */
+.caution {
+  background: var(--accent-red-light);
+  border: 1px solid #f5bcbc;
+  border-radius: var(--radius);
+  padding: 14px 18px;
+  font-size: 13px;
+  color: var(--accent-red);
+  margin-top: 16px;
+}
+.caution-label {
+  font-weight: 700;
+  margin-bottom: 4px;
+  font-size: 11px;
+  letter-spacing: 0.08em;
+}
+
+/* ── STEP FLOW ── */
+.step-flow { margin: 8px 0 20px; }
+.step-item {
+  display: flex;
+  gap: 0;
+  position: relative;
+}
+.step-left {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 48px;
+  flex-shrink: 0;
+}
+.step-badge {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  background: var(--trail-blue);
+  color: #fff;
+  font-size: 11px;
+  font-weight: 900;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  line-height: 1.1;
+  flex-shrink: 0;
+  z-index: 1;
+}
+.step-badge.step0 { background: var(--accent-gold); }
+.step-badge span { font-size: 8px; }
+.step-line {
+  width: 2px;
+  flex: 1;
+  background: var(--border);
+  min-height: 24px;
+}
+.step-content {
+  flex: 1;
+  padding: 8px 0 24px 12px;
+}
+.step-label {
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--ink);
+  margin-bottom: 4px;
+}
+.step-sub {
+  font-size: 12px;
+  color: var(--ink-mute);
+  line-height: 1.6;
+}
+.step-arrow {
+  text-align: center;
+  color: var(--trail-blue);
+  font-size: 18px;
+  line-height: 1;
+  margin: -8px 0 -4px 20px;
+}
+.step-item:last-child .step-line { display: none; }
+.step-item:last-child .step-content { padding-bottom: 0; }
+
+/* ── MEMBER COMPARE ── */
+.member-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  margin: 16px 0;
+}
+@media (max-width: 540px) { .member-grid { grid-template-columns: 1fr; } }
+.member-card {
+  border-radius: var(--radius);
+  overflow: hidden;
+  border: 2px solid var(--border);
+}
+.member-card.premium { border-color: var(--accent-gold); }
+.member-card-head {
+  padding: 12px 16px;
+  font-weight: 700;
+  font-size: 14px;
+  background: var(--surface-2);
+  color: var(--ink);
+}
+.member-card.premium .member-card-head {
+  background: var(--accent-gold);
+  color: #fff;
+}
+.member-card-body { padding: 14px 16px; font-size: 13px; line-height: 1.9; color: var(--ink-soft); }
+.member-card-body li { list-style: none; padding-left: 0; margin-bottom: 4px; }
+.member-card-body li::before { content: '✓　'; color: var(--accent-green); font-weight: 700; }
+
+/* ── PRICE TABLE ── */
+.price-tree { margin: 16px 0; }
+.price-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 16px;
+  border-radius: var(--radius);
+  margin-bottom: 8px;
+  background: var(--surface-2);
+  font-size: 14px;
+}
+.price-row.highlight { background: var(--accent-gold-light); border: 1px solid var(--accent-gold); }
+.price-row .price-label { flex: 1; font-weight: 500; }
+.price-row .price-val { font-weight: 700; color: var(--trail-navy); font-size: 15px; }
+.price-row .price-sub { font-size: 11px; color: var(--ink-mute); }
+.price-divider { border: none; border-top: 1px dashed var(--border); margin: 12px 0; }
+
+/* ── TICKET FLOW ── */
+.ticket-flow {
+  background: var(--surface-2);
+  border-radius: var(--radius);
+  padding: 20px;
+  margin: 16px 0;
+}
+.ticket-flow-title { font-size: 12px; font-weight: 700; color: var(--ink-mute); margin-bottom: 14px; letter-spacing: 0.08em; }
+.ticket-items { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; }
+.ticket-box {
+  background: var(--trail-blue);
+  color: #fff;
+  border-radius: var(--radius);
+  padding: 10px 14px;
+  font-size: 13px;
+  font-weight: 700;
+  text-align: center;
+}
+.ticket-box.gold { background: var(--accent-gold); }
+.ticket-box.ghost { background: var(--surface); color: var(--ink-soft); border: 1px dashed var(--border); }
+.ticket-arrow { color: var(--ink-mute); font-size: 16px; }
+
+/* ── TIMELINE ── */
+.timeline { margin: 16px 0; }
+.tl-item {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 4px;
+}
+.tl-left {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 36px;
+}
+.tl-dot {
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: var(--trail-blue);
+  flex-shrink: 0;
+  margin-top: 5px;
+}
+.tl-dot.red { background: var(--accent-red); }
+.tl-dot.orange { background: var(--accent-orange); }
+.tl-dot.green { background: var(--accent-green); }
+.tl-vline { width: 2px; flex: 1; background: var(--border); min-height: 20px; }
+.tl-content { flex: 1; padding-bottom: 20px; }
+.tl-day { font-size: 11px; font-weight: 700; color: var(--ink-mute); margin-bottom: 2px; }
+.tl-text { font-size: 13px; color: var(--ink-soft); line-height: 1.7; }
+.tl-item:last-child .tl-vline { display: none; }
+.tl-item:last-child .tl-content { padding-bottom: 0; }
+
+/* ── FLOW CHART ── */
+.flowbox-wrap { display: flex; flex-direction: column; align-items: flex-start; gap: 4px; margin: 16px 0; }
+.flowbox {
+  border: 2px solid var(--trail-blue);
+  border-radius: var(--radius);
+  padding: 10px 18px;
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--trail-blue);
+  background: var(--trail-blue-light);
+  position: relative;
+  min-width: 200px;
+}
+.flowbox.red { border-color: var(--accent-red); color: var(--accent-red); background: var(--accent-red-light); }
+.flowbox.green { border-color: var(--accent-green); color: var(--accent-green); background: var(--accent-green-light); }
+.flowbox.gold { border-color: var(--accent-gold); color: var(--accent-orange); background: var(--accent-gold-light); }
+.flowbox.neutral { border-color: var(--border); color: var(--ink-soft); background: var(--surface-2); }
+.flow-arrow { font-size: 18px; color: var(--ink-mute); padding-left: 20px; line-height: 1; }
+.flow-branch { display: flex; gap: 16px; flex-wrap: wrap; align-items: flex-start; margin-left: 20px; }
+.flow-branch-item { display: flex; flex-direction: column; align-items: flex-start; gap: 4px; }
+.branch-label { font-size: 10px; color: var(--ink-mute); font-weight: 700; letter-spacing: 0.08em; padding-left: 2px; }
+
+/* ── PROHIBIT TABLE ── */
+.prohibit-list { margin: 12px 0; }
+.prohibit-item {
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  margin-bottom: 10px;
+  overflow: hidden;
+}
+.prohibit-head {
+  background: var(--surface-2);
+  padding: 10px 16px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--ink);
+}
+.prohibit-num {
+  background: var(--accent-red);
+  color: #fff;
+  font-size: 10px;
+  padding: 2px 7px;
+  border-radius: 4px;
+  flex-shrink: 0;
+}
+.prohibit-body {
+  padding: 10px 16px;
+  font-size: 12px;
+  color: var(--ink-mute);
+  background: var(--surface);
+  border-top: 1px solid var(--border);
+}
+.prohibit-example {
+  display: inline-block;
+  background: var(--accent-red-light);
+  color: var(--accent-red);
+  padding: 2px 8px;
+  border-radius: 4px;
+  font-size: 11px;
+  font-weight: 700;
+  margin-right: 4px;
+}
+
+/* ── PP FLOW ── */
+.pp-flow { margin: 16px 0; display: flex; flex-direction: column; align-items: flex-start; gap: 4px; }
+.pp-box {
+  border-radius: var(--radius);
+  padding: 12px 18px;
+  font-size: 13px;
+  font-weight: 500;
+  line-height: 1.6;
+  min-width: 240px;
+}
+.pp-box.blue { background: var(--trail-blue-light); border: 2px solid var(--trail-blue); color: var(--trail-navy); }
+.pp-box.green { background: var(--accent-green-light); border: 2px solid var(--accent-green); color: var(--accent-green); font-weight: 700; }
+
+/* ── JACA BADGE ── */
+.jaca-table { width: 100%; border-collapse: collapse; margin: 16px 0; font-size: 13px; }
+.jaca-table th { background: var(--trail-navy); color: #fff; padding: 10px 14px; text-align: left; font-size: 12px; }
+.jaca-table td { padding: 10px 14px; border-bottom: 1px solid var(--border); vertical-align: top; }
+.jaca-table tr:last-child td { border-bottom: none; }
+.jaca-table tr:nth-child(even) td { background: var(--surface-2); }
+.tag-green { background: var(--accent-green-light); color: var(--accent-green); padding: 2px 8px; border-radius: 4px; font-size: 11px; font-weight: 700; }
+.tag-gold { background: var(--accent-gold-light); color: var(--accent-orange); padding: 2px 8px; border-radius: 4px; font-size: 11px; font-weight: 700; }
+
+/* ── FOOTER ── */
+.site-footer {
+  text-align: center;
+  padding: 40px 20px;
+  font-size: 12px;
+  color: var(--ink-mute);
+  border-top: 1px solid var(--border);
+}
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header class="site-header">
+  <div class="logo-label">TRAILBLAZER 利用案内</div>
+  <h1>よくわかる契約書</h1>
+  <p class="subtitle">難しい法律用語を、わかりやすく解説します</p>
+  <span class="header-badge">v2.0 ｜ 2026年9月20日</span>
+</header>
+
+<!-- TOC -->
+<nav class="toc" aria-label="目次">
+  <div class="toc-inner">
+    <a href="#flow">申込の流れ</a>
+    <a href="#s1">定義</a>
+    <a href="#s2">会員種別</a>
+    <a href="#s3">料金</a>
+    <a href="#s4">支払遅延</a>
+    <a href="#s5">禁止事項</a>
+    <a href="#s6">停止</a>
+    <a href="#s7">解約</a>
+    <a href="#s8">知的財産権</a>
+    <a href="#s9">免責</a>
+    <a href="#s10">個人情報</a>
+    <a href="#s11">管轄</a>
+    <a href="#table">料金表</a>
+    <a href="#jaca">減免条件</a>
+  </div>
+</nav>
+
+<main class="main">
+
+<!-- ══════════════════════════════════════ -->
+<!-- 申込の流れ -->
+<!-- ══════════════════════════════════════ -->
+<section id="flow" class="section-card">
+  <div class="section-head">
+    <span class="section-num">GUIDE</span>
+    <span class="section-title">申込の流れ（STEP 0〜4）</span>
+  </div>
+  <div class="section-body">
+    <div class="oneliner">
+      <div class="oneliner-label">ひとことで言うと</div>
+      プロラインのLPを見て、リッチメニューからポチるだけ！
+    </div>
+    <div class="step-flow">
+
+      <div class="step-item">
+        <div class="step-left">
+          <div class="step-badge step0"><span>STEP</span>0</div>
+          <div class="step-line"></div>
+        </div>
+        <div class="step-content">
+          <div class="step-label">プロラインのLPを見て、リッチメニューから申込をタップ</div>
+          <div class="step-sub">TrailBlazerの試用版を利用中に、LINEのリッチメニューにある「申込ボタン」をタップしてください。<br>その後、事務局からメールが届きます。</div>
+        </div>
+      </div>
+
+      <div class="step-item">
+        <div class="step-left">
+          <div class="step-badge">1</div>
+          <div class="step-line"></div>
+        </div>
+        <div class="step-content">
+          <div class="step-label">Googleアカウントを準備する</div>
+          <div class="step-sub">個人用のGoogleアカウントが必要です。会社や事務所などで共有しているアカウントはご利用いただけません。</div>
+        </div>
+      </div>
+
+      <div class="step-item">
+        <div class="step-left">
+          <div class="step-badge">2</div>
+          <div class="step-line"></div>
+        </div>
+        <div class="step-content">
+          <div class="step-label">メール内のリンクから電子契約サービスにアクセスし、規約を確認</div>
+          <div class="step-sub">届いたメールのリンクを開いてください。本規約とプライバシーポリシーをご確認いただきます。</div>
+        </div>
+      </div>
+
+      <div class="step-item">
+        <div class="step-left">
+          <div class="step-badge">3</div>
+          <div class="step-line"></div>
+        </div>
+        <div class="step-content">
+          <div class="step-label">申込フォームに必要事項を入力</div>
+          <div class="step-sub">氏名・屋号・住所・電話番号・メールアドレスをご記入ください。</div>
+        </div>
+      </div>
+
+      <div class="step-item">
+        <div class="step-left">
+          <div class="step-badge">4</div>
+          <div class="step-line"></div>
+        </div>
+        <div class="step-content">
+          <div class="step-label">事務局が承諾 → 電子契約締結 → サービス開始！</div>
+          <div class="step-sub">事務局が申込内容を確認し、承諾通知をお送りします。電子契約が締結された時点でサービス開始となります。</div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════ -->
+<!-- 第1条 定義 -->
+<!-- ══════════════════════════════════════ -->
+<section id="s1" class="section-card">
+  <div class="section-head">
+    <span class="section-num">第1条</span>
+    <span class="section-title">定義（用語説明）</span>
+  </div>
+  <div class="section-body">
+    <div class="oneliner">
+      <div class="oneliner-label">ひとことで言うと</div>
+      この契約書で使う「専門用語」の意味を最初に整理しています
+    </div>
+    <div class="detail">
+      <table style="width:100%;border-collapse:collapse;font-size:13px;">
+        <thead>
+          <tr style="background:var(--trail-navy);color:#fff;">
+            <th style="padding:9px 14px;text-align:left;width:30%;">用語</th>
+            <th style="padding:9px 14px;text-align:left;">意味</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td style="padding:9px 14px;border-bottom:1px solid var(--border);font-weight:700;">甲</td><td style="padding:9px 14px;border-bottom:1px solid var(--border);">TrailBlazer事務局（石川俊之）</td></tr>
+          <tr style="background:var(--surface-2);"><td style="padding:9px 14px;border-bottom:1px solid var(--border);font-weight:700;">乙</td><td style="padding:9px 14px;border-bottom:1px solid var(--border);">サービスを利用するあなた</td></tr>
+          <tr><td style="padding:9px 14px;border-bottom:1px solid var(--border);font-weight:700;">BASIC会員</td><td style="padding:9px 14px;border-bottom:1px solid var(--border);">使用料のみ支払う会員。サポートは都度払い</td></tr>
+          <tr style="background:var(--surface-2);"><td style="padding:9px 14px;border-bottom:1px solid var(--border);font-weight:700;">PREMIUM会員</td><td style="padding:9px 14px;border-bottom:1px solid var(--border);">使用料＋サポート料を支払い、年間300分のサポートチケットが付く会員</td></tr>
+          <tr><td style="padding:9px 14px;border-bottom:1px solid var(--border);font-weight:700;">RST</td><td style="padding:9px 14px;border-bottom:1px solid var(--border);">あなたのサービス利用状態（Registration Status）</td></tr>
+          <tr style="background:var(--surface-2);"><td style="padding:9px 14px;border-bottom:1px solid var(--border);font-weight:700;">PTF</td><td style="padding:9px 14px;border-bottom:1px solid var(--border);">プログラム修正・機能更新の適用（アップデートのこと）</td></tr>
+          <tr><td style="padding:9px 14px;font-weight:700;">Circle</td><td style="padding:9px 14px;">PREMIUM会員で構成されるコミュニティグループ</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════ -->
+<!-- 第3条 会員種別 -->
+<!-- ══════════════════════════════════════ -->
+<section id="s2" class="section-card">
+  <div class="section-head">
+    <span class="section-num">第3条</span>
+    <span class="section-title">サービス内容および会員種別</span>
+  </div>
+  <div class="section-body">
+    <div class="oneliner">
+      <div class="oneliner-label">ひとことで言うと</div>
+      BASICは「自分でやる」、PREMIUMは「サポートも受けられる」
+    </div>
+    <div class="member-grid">
+      <div class="member-card">
+        <div class="member-card-head">🔵 BASIC会員</div>
+        <div class="member-card-body">
+          <ul>
+            <li>TrailBlazerの利用ができる</li>
+            <li>操作は自分で進める</li>
+            <li>困ったときは都度サポート申込</li>
+            <li>都度払い：前払い500円 / 後払い1,000円（30分）</li>
+          </ul>
+        </div>
+      </div>
+      <div class="member-card premium">
+        <div class="member-card-head">⭐ PREMIUM会員</div>
+        <div class="member-card-body">
+          <ul>
+            <li>TrailBlazerの利用ができる</li>
+            <li>年間300分のサポートチケット付き</li>
+            <li>Chatwork・Zoom・メール・リモートで対応</li>
+            <li>訪問支援は交通費実費別途</li>
+            <li>Circleへの参加資格あり</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="detail" style="margin-top:8px;">
+      <strong style="font-size:13px;display:block;margin-bottom:10px;">チケットの使い方フロー（PREMIUMのみ）</strong>
+    </div>
+    <div class="ticket-flow">
+      <div class="ticket-flow-title">年間チケット消化の流れ</div>
+      <div class="ticket-items">
+        <div class="ticket-box gold">契約更新時<br>300分チケット付与</div>
+        <div class="ticket-arrow">→</div>
+        <div class="ticket-box">チケットで<br>申込（30分単位）</div>
+        <div class="ticket-arrow">→</div>
+        <div class="ticket-box">サポート実施</div>
+        <div class="ticket-arrow">→</div>
+        <div class="ticket-box ghost">300分超過したら<br>都度申込に切替</div>
+      </div>
+      <div style="margin-top:12px;font-size:12px;color:var(--ink-mute);">※ 有効期限・未使用チケットの扱いなどは「チケット利用規程」で別途定めます</div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════ -->
+<!-- 第4条 料金 -->
+<!-- ══════════════════════════════════════ -->
+<section id="s3" class="section-card">
+  <div class="section-head">
+    <span class="section-num">第4条</span>
+    <span class="section-title">利用料金・支払い</span>
+  </div>
+  <div class="section-body">
+    <div class="oneliner">
+      <div class="oneliner-label">ひとことで言うと</div>
+      年1回まとめて払い。Web決済が基本です
+    </div>
+
+    <div class="price-tree">
+      <div class="price-row">
+        <span class="price-label">使用料（BASIC・PREMIUM共通）</span>
+        <span class="price-val">12,000円/年</span>
+      </div>
+      <div class="price-row">
+        <span class="price-label">サポート料（PREMIUMのみ）</span>
+        <span class="price-val">12,000円/年</span>
+        <span class="price-sub">300分チケット込み</span>
+      </div>
+      <hr class="price-divider">
+      <div class="price-row highlight">
+        <span class="price-label">PREMIUM合計</span>
+        <span class="price-val">24,000円/年</span>
+      </div>
+      <hr class="price-divider">
+      <div class="price-row">
+        <span class="price-label">追加サポート（前払いチケット）</span>
+        <span class="price-val">500円/枚</span>
+        <span class="price-sub">30分単位</span>
+      </div>
+      <div class="price-row">
+        <span class="price-label">追加サポート（後払い）</span>
+        <span class="price-val">1,000円/枚</span>
+        <span class="price-sub">30分単位</span>
+      </div>
+    </div>
+
+    <div class="detail">
+      <strong>支払い方法</strong><br>
+      事務局が指定するWeb決済サービスでのお支払いが基本です。Web決済が難しい場合はご相談ください（コンビニ払いなど別途対応可、事務手数料あり）。
+    </div>
+
+    <div class="caution">
+      <div class="caution-label">⚠️ 気をつけてほしいこと</div>
+      料金を改定する場合は、改定日の<strong>3ヶ月前まで</strong>に登録メールアドレスへ通知します。
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════ -->
+<!-- 第5条 支払遅延 -->
+<!-- ══════════════════════════════════════ -->
+<section id="s4" class="section-card">
+  <div class="section-head">
+    <span class="section-num">第5条</span>
+    <span class="section-title">支払遅延</span>
+  </div>
+  <div class="section-body">
+    <div class="oneliner">
+      <div class="oneliner-label">ひとことで言うと</div>
+      支払いが遅れると、停止→解約になります
+    </div>
+    <div class="timeline">
+      <div class="tl-item">
+        <div class="tl-left"><div class="tl-dot"></div><div class="tl-vline"></div></div>
+        <div class="tl-content">
+          <div class="tl-day">支払期日の翌日〜</div>
+          <div class="tl-text">年率6%の遅延損害金が発生します</div>
+        </div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-left"><div class="tl-dot orange"></div><div class="tl-vline"></div></div>
+        <div class="tl-content">
+          <div class="tl-day">支払期日から30日超過</div>
+          <div class="tl-text">催告なく<strong>サービス停止</strong>になります</div>
+        </div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-left"><div class="tl-dot red"></div><div class="tl-vline"></div></div>
+        <div class="tl-content">
+          <div class="tl-day">停止後、さらに30日以内に支払いなし</div>
+          <div class="tl-text"><strong>契約解除</strong>となります。<br>すでに支払った料金の返金はありません。</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════ -->
+<!-- 第6条 禁止事項 -->
+<!-- ══════════════════════════════════════ -->
+<section id="s5" class="section-card">
+  <div class="section-head">
+    <span class="section-num">第6条</span>
+    <span class="section-title">禁止事項</span>
+  </div>
+  <div class="section-body">
+    <div class="oneliner">
+      <div class="oneliner-label">ひとことで言うと</div>
+      やってはいけないことをまとめました
+    </div>
+    <div class="prohibit-list">
+
+      <div class="prohibit-item">
+        <div class="prohibit-head"><span class="prohibit-num">1号</span>共用アカウントの使用禁止</div>
+        <div class="prohibit-body">
+          <span class="prohibit-example">❌ 具体例</span>
+          会社のみんなで1つのGoogleアカウントを使い回してTrailBlazerにログインする
+        </div>
+      </div>
+
+      <div class="prohibit-item">
+        <div class="prohibit-head"><span class="prohibit-num">2号</span>利用権限の譲渡・貸与・共有禁止</div>
+        <div class="prohibit-body">
+          <span class="prohibit-example">❌ 具体例</span>
+          「知り合いの業者さんに一時的に貸してあげる」「アカウント情報を教えて一緒に使う」はNG
+        </div>
+      </div>
+
+      <div class="prohibit-item">
+        <div class="prohibit-head"><span class="prohibit-num">3号</span>甲の情報の無断開示禁止</div>
+        <div class="prohibit-body">
+          <span class="prohibit-example">❌ 具体例</span>
+          サービス内で受け取ったマニュアルや業務テンプレートを、第三者にそのまま送る
+        </div>
+      </div>
+
+      <div class="prohibit-item">
+        <div class="prohibit-head"><span class="prohibit-num">4号</span>知的財産権・法令違反行為の禁止</div>
+        <div class="prohibit-body">
+          <span class="prohibit-example">❌ 具体例</span>
+          他社の著作物を無断でTrailBlazerに取り込む、個人情報保護法に違反した使い方をする
+        </div>
+      </div>
+
+      <div class="prohibit-item">
+        <div class="prohibit-head"><span class="prohibit-num">5号</span>システムへの過大負荷・妨害禁止</div>
+        <div class="prohibit-body">
+          <span class="prohibit-example">❌ 具体例</span>
+          自動ツールで大量アクセスを繰り返す、サーバーを意図的に重くするような操作をする
+        </div>
+      </div>
+
+      <div class="prohibit-item">
+        <div class="prohibit-head"><span class="prohibit-num">6号</span>法令・公序良俗違反</div>
+        <div class="prohibit-body">
+          <span class="prohibit-example">❌ 具体例</span>
+          違法な業務の記録管理にTrailBlazerを使う
+        </div>
+      </div>
+
+      <div class="prohibit-item">
+        <div class="prohibit-head"><span class="prohibit-num">7号</span>その他、事務局が不適切と判断する行為</div>
+        <div class="prohibit-body">
+          <span class="prohibit-example">❌ 具体例</span>
+          明らかに悪意のある使い方・嫌がらせ目的の申込など
+        </div>
+      </div>
+
+      <div class="prohibit-item">
+        <div class="prohibit-head"><span class="prohibit-num">8号</span>反社会的勢力への該当・関与禁止</div>
+        <div class="prohibit-body">
+          <span class="prohibit-example">❌ 具体例</span>
+          暴力団・暴力団関係者である、またはそれらと取引関係にある
+        </div>
+      </div>
+
+      <div class="prohibit-item">
+        <div class="prohibit-head"><span class="prohibit-num">9号</span>著作物の複製・改変・無断配布禁止</div>
+        <div class="prohibit-body">
+          <span class="prohibit-example">❌ 具体例</span>
+          TrailBlazerのExcelファイルをコピーして仲間の業者さんに配る<br>
+          <span class="prohibit-example">❌ 具体例</span>
+          プログラムを解析して自分用に改造する
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════ -->
+<!-- 第7条 停止 -->
+<!-- ══════════════════════════════════════ -->
+<section id="s6" class="section-card">
+  <div class="section-head">
+    <span class="section-num">第7条</span>
+    <span class="section-title">契約の停止</span>
+  </div>
+  <div class="section-body">
+    <div class="oneliner">
+      <div class="oneliner-label">ひとことで言うと</div>
+      違反があれば予告なし停止。でも改善すれば再開できます
+    </div>
+    <div class="detail">以下のどれかに当てはまると、事前通知なしにサービスが停止されることがあります。</div>
+
+    <div class="flowbox-wrap">
+      <div class="flow-branch">
+        <div class="flow-branch-item">
+          <div class="branch-label">トリガー①</div>
+          <div class="flowbox red">第6条の禁止事項に違反</div>
+        </div>
+        <div class="flow-branch-item">
+          <div class="branch-label">トリガー②</div>
+          <div class="flowbox red">料金を30日超滞納</div>
+        </div>
+        <div class="flow-branch-item">
+          <div class="branch-label">トリガー③</div>
+          <div class="flowbox red">カスタマーハラスメント<br><span style="font-size:11px;font-weight:400;">暴言・過度な要求・長時間拘束など</span></div>
+        </div>
+        <div class="flow-branch-item">
+          <div class="branch-label">トリガー④</div>
+          <div class="flowbox red">運営上の必要性</div>
+        </div>
+      </div>
+      <div class="flow-arrow">↓</div>
+      <div class="flowbox gold">メールで停止理由を通知</div>
+      <div class="flow-arrow">↓</div>
+      <div class="flow-branch">
+        <div class="flow-branch-item">
+          <div class="branch-label">改善あり</div>
+          <div class="flowbox green">サービス再開 ✓</div>
+        </div>
+        <div class="flow-branch-item">
+          <div class="branch-label">改善なし（30日）</div>
+          <div class="flowbox red">契約解除へ →</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="caution">
+      <div class="caution-label">⚠️ カスハラについて</div>
+      カスタマーハラスメントの記録は保存されます。繰り返しがあった場合は解約事由として使用されることがあります。
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════ -->
+<!-- 第8条 解約 -->
+<!-- ══════════════════════════════════════ -->
+<section id="s7" class="section-card">
+  <div class="section-head">
+    <span class="section-num">第8条</span>
+    <span class="section-title">解約</span>
+  </div>
+  <div class="section-body">
+    <div class="oneliner">
+      <div class="oneliner-label">ひとことで言うと</div>
+      辞めたいときは30日前までに。払った料金は戻りません
+    </div>
+
+    <div class="detail"><strong>自分から解約するとき</strong></div>
+    <div class="flowbox-wrap">
+      <div class="flowbox neutral">契約期間満了の30日前までに申し出る</div>
+      <div class="flow-arrow">↓</div>
+      <div class="flowbox green">契約期間満了で解約完了 ✓</div>
+    </div>
+
+    <div class="detail" style="margin-top:20px;"><strong>事務局から解約されるケース</strong></div>
+    <div class="flowbox-wrap">
+      <div class="flow-branch">
+        <div class="flow-branch-item">
+          <div class="branch-label">ケース①</div>
+          <div class="flowbox red">停止後30日<br>改善なし</div>
+        </div>
+        <div class="flow-branch-item">
+          <div class="branch-label">ケース②</div>
+          <div class="flowbox red">反社会的勢力<br>に該当と判明</div>
+        </div>
+        <div class="flow-branch-item">
+          <div class="branch-label">ケース③</div>
+          <div class="flowbox red">破産・倒産<br>手続き申立て</div>
+        </div>
+        <div class="flow-branch-item">
+          <div class="branch-label">ケース④</div>
+          <div class="flowbox red">90日以上<br>無応答→最終通知→30日無応答</div>
+        </div>
+      </div>
+      <div class="flow-arrow">↓</div>
+      <div class="flowbox red">催告なく契約解除</div>
+    </div>
+
+    <div class="caution">
+      <div class="caution-label">⚠️ 気をつけてほしいこと</div>
+      どちらの場合も、<strong>すでにお支払いいただいた料金の返金はありません</strong>。
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════ -->
+<!-- 第9条 知的財産権 -->
+<!-- ══════════════════════════════════════ -->
+<section id="s8" class="section-card">
+  <div class="section-head">
+    <span class="section-num">第9条</span>
+    <span class="section-title">知的財産権</span>
+  </div>
+  <div class="section-body">
+    <div class="oneliner">
+      <div class="oneliner-label">ひとことで言うと</div>
+      ツールの著作権は事務局のもの。あなたのデータはあなたのもの
+    </div>
+
+    <div class="member-grid">
+      <div class="member-card">
+        <div class="member-card-head">📁 事務局のもの</div>
+        <div class="member-card-body">
+          <ul>
+            <li>TrailBlazerのプログラム</li>
+            <li>マニュアル・文書一式</li>
+            <li>Circleで提供する契約書ひな形・テンプレート</li>
+            <li>リッチメニュー画像 など</li>
+          </ul>
+        </div>
+      </div>
+      <div class="member-card premium">
+        <div class="member-card-head">🗂️ あなたのもの</div>
+        <div class="member-card-body">
+          <ul>
+            <li>TrailBlazerに入力・蓄積したデータ</li>
+            <li>DBシートからエクスポートしたデータ</li>
+            <li>※エクスポート後の加工は自己責任</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="caution">
+      <div class="caution-label">⚠️ 契約終了後は</div>
+      提供を受けた著作物の利用をすぐに停止し、コピーがある場合は廃棄してください。
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════ -->
+<!-- 第10条 免責 -->
+<!-- ══════════════════════════════════════ -->
+<section id="s9" class="section-card">
+  <div class="section-head">
+    <span class="section-num">第10条</span>
+    <span class="section-title">免責事項</span>
+  </div>
+  <div class="section-body">
+    <div class="oneliner">
+      <div class="oneliner-label">ひとことで言うと</div>
+      事務局が責任を負えないケースをまとめました
+    </div>
+    <div class="detail">以下の原因で損害が発生しても、事務局は責任を負いません。</div>
+    <div class="prohibit-list">
+      <div class="prohibit-item">
+        <div class="prohibit-head" style="background:var(--surface-2);">① 天災・停電・通信障害などの不可抗力</div>
+      </div>
+      <div class="prohibit-item">
+        <div class="prohibit-head" style="background:var(--surface-2);">② 外部サービスの仕様変更・障害・サービス終了<br><span style="font-size:11px;font-weight:400;">（Microsoft・Google・LINE など）</span></div>
+      </div>
+      <div class="prohibit-item">
+        <div class="prohibit-head" style="background:var(--surface-2);">③ あなたの操作ミス・設定誤り・PTF未適用</div>
+      </div>
+      <div class="prohibit-item">
+        <div class="prohibit-head" style="background:var(--surface-2);">④ あなたのPCやネットワーク環境に起因する問題</div>
+      </div>
+      <div class="prohibit-item">
+        <div class="prohibit-head" style="background:var(--surface-2);">⑤ 第三者による不正アクセス・ウイルス感染など</div>
+      </div>
+      <div class="prohibit-item">
+        <div class="prohibit-head" style="background:var(--surface-2);">⑥ エクスポートデータを加工・利用して生じた損害</div>
+      </div>
+    </div>
+    <div class="caution">
+      <div class="caution-label">⚠️ 賠償上限について</div>
+      万が一、事務局が損害賠償責任を負う場合の上限は、<strong>その月の月額換算利用料金（年額÷12）</strong>となります。ただし、事務局に故意または重大な過失がある場合はこの限りではありません。
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════ -->
+<!-- 第11条 個人情報 -->
+<!-- ══════════════════════════════════════ -->
+<section id="s10" class="section-card">
+  <div class="section-head">
+    <span class="section-num">第11条</span>
+    <span class="section-title">個人情報</span>
+  </div>
+  <div class="section-body">
+    <div class="oneliner">
+      <div class="oneliner-label">ひとことで言うと</div>
+      個人情報の扱いは、プライバシーポリシーに全部書いてあります
+    </div>
+    <div class="detail">申込時にご登録いただく情報（氏名・屋号・住所・電話番号・メールアドレスなど）および利用状況（RST・認証ログ・PTF適用履歴など）は、プライバシーポリシーに従って適切に管理します。</div>
+
+    <div class="pp-flow">
+      <div class="pp-box blue">📋 申込時に<br>プライバシーポリシーを確認・同意</div>
+      <div class="flow-arrow">↓</div>
+      <div class="pp-box blue">🔐 個人情報はプライバシーポリシーに従い管理<br><span style="font-size:11px;font-weight:400;">（Google・Notionの2社を利用）</span></div>
+      <div class="flow-arrow">↓</div>
+      <div class="pp-box green">✉️ 開示・訂正・削除のご要望は<br>webmaster.trailblazer@gmail.com へ</div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════ -->
+<!-- 第12条 管轄 -->
+<!-- ══════════════════════════════════════ -->
+<section id="s11" class="section-card">
+  <div class="section-head">
+    <span class="section-num">第12条</span>
+    <span class="section-title">準拠法・管轄</span>
+  </div>
+  <div class="section-body">
+    <div class="oneliner">
+      <div class="oneliner-label">ひとことで言うと</div>
+      もめごとになったときは、日本の法律・兵庫の裁判所で解決します
+    </div>
+    <div class="detail">
+      本契約は<strong>日本法</strong>が適用されます。<br>
+      紛争が生じた場合は、訴額に応じて<strong>西宮簡易裁判所</strong>または<strong>神戸地方裁判所</strong>を第一審の管轄裁判所とします。<br>
+      弁護士費用などは、それぞれの負担となります。
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════ -->
+<!-- 別表第1号 料金表 -->
+<!-- ══════════════════════════════════════ -->
+<section id="table" class="section-card">
+  <div class="section-head">
+    <span class="section-num">別表1号</span>
+    <span class="section-title">料金表</span>
+  </div>
+  <div class="section-body">
+    <table class="jaca-table">
+      <thead>
+        <tr>
+          <th>区分</th>
+          <th>単価</th>
+          <th>備考</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td>使用料（BASIC・PREMIUM共通）</td><td><strong>12,000円/年</strong></td><td>年1回、契約更新時に支払い</td></tr>
+        <tr><td>サポート料（PREMIUMのみ）</td><td><strong>12,000円/年</strong></td><td>300分チケット付き</td></tr>
+        <tr><td>PREMIUM合計</td><td><strong>24,000円/年</strong></td><td></td></tr>
+        <tr><td>追加サポート（前払いチケット）</td><td><strong>500円/枚</strong></td><td>30分単位</td></tr>
+        <tr><td>追加サポート（後払い）</td><td><strong>1,000円/枚</strong></td><td>30分単位</td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════ -->
+<!-- 別表第2号 減免条件 -->
+<!-- ══════════════════════════════════════ -->
+<section id="jaca" class="section-card">
+  <div class="section-head">
+    <span class="section-num">別表2号</span>
+    <span class="section-title">減免条件表</span>
+  </div>
+  <div class="section-body">
+    <div class="oneliner">
+      <div class="oneliner-label">ひとことで言うと</div>
+      JACA会員は使用料が免除されます
+    </div>
+    <table class="jaca-table">
+      <thead>
+        <tr>
+          <th>特約条件</th>
+          <th>対象</th>
+          <th>減免内容</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>JACA会員資格保有</td>
+          <td><span class="tag-green">BASIC</span></td>
+          <td>使用料 全額免除（0円）</td>
+        </tr>
+        <tr>
+          <td>JACA会員資格保有</td>
+          <td><span class="tag-gold">PREMIUM</span></td>
+          <td>使用料 全額免除 ＋ サポート料 12,000円→<strong>3,600円</strong><br><span style="font-size:11px;color:var(--ink-mute);">チケット300分付与は変わらず</span></td>
+        </tr>
+        <tr>
+          <td>（将来の提携先）</td>
+          <td>○○会員</td>
+          <td>別途定める</td>
+        </tr>
+      </tbody>
+    </table>
+    <div class="caution">
+      <div class="caution-label">⚠️ 資格喪失のとき</div>
+      契約期間中にJACA会員資格を失った場合は、<strong>1ヶ月以内</strong>に事務局へメールでご連絡ください。報告が1ヶ月を超えた場合、年間使用料の2倍相当の過怠金が請求されることがあります。
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer class="site-footer">
+  <p>TrailBlazer事務局｜石川俊之</p>
+  <p style="margin-top:4px;">webmaster.trailblazer@gmail.com</p>
+  <p style="margin-top:8px;font-size:11px;">本書は利用規約v2の内容をわかりやすく解説したものです。法的効力は正規の利用規約本文によります。</p>
+</footer>
+
+</body>
+</html>
